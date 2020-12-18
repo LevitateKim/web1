@@ -5,3 +5,60 @@
 <li><a href="2.html" class="saw" id="active">CSS</a></li>
 <!-- class="saw active" 하게되면 위에 <style>에서 순서에 따라 결과값 달라짐. 따라서 id="" 추가 -->
 <!-- id 선택자는 중복되어서는 안됨 -->
+
+
+a { /* a라는 태그에게 */
+  /* color:green; */
+  color: black;
+  text-decoration: none; /* 밑줄 없애기 */
+}
+
+<style>
+  /*
+    block level element(tag) 화면 전체
+  */
+  h1 {
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+    /* display: inline; */
+    /* 자기 자신 크기만큼 설정 가능 */
+  }
+  /*
+    inline element 자기 자신 크기만큼
+  */
+  a {
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+    /* display: block; */
+    /* 화면 전체 설정 가능 */
+  }
+</style>
+
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <style>
+      h1, a { /* h1과 a 코드 같으면 이렇게 합칠 수 있음 -> 중복 방지 */
+        /*
+        border-width: 5px;
+        border-color: red;
+        border-style: solid;
+        */
+        /* 위에 border- 이것도 중복이므로 한 번에 처리할 수 있음 */
+        border: 5px solid red; /* 순서 상관 없음 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS</h1>
+    Cascading Style Sheets
+    (<a href="https://en.wikipedia.org/wiki/CSS">CSS</a>) is a style sheet language used for describing
+    the presentation of a document written in a markup language such as HTML.
+    [1] CSS is a cornerstone technology of the World Wide Web, alongside HTML
+    and JavaScript.[2]
+  </body>
+</html>

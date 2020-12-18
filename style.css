@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+}
+#here { /* here라는 클래스를 디자인 할 때 앞에 . 붙인다 */
+  color: brown;
+  font-size: 20px;
+}
+#title {
+  color: black;
+}
+h1 {
+  font-size: 60px;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  margin: 0;
+  padding: 20px;
+}
+ol { /* block level element */
+  border-right:1px solid gray;
+  width: 100px;
+  margin: 0;
+  padding: 20px;
+}
+a:link {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: gray;
+  text-decoration: none;
+}
+/*
+ 여기서 알 수 있는 건 선택자에서 id > class > tag 순으로 힘이 세다(우선순위)
+ 여기서 a, active, saw, h1 은 tag(element), class, id 라는 selector임
+*/
+#grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+#grid ol { /* 모든 ol 태그 중에서 부모가 grid인 ol */
+  padding-left: 30px;
+}
+#article {
+  padding-left: 25px;
+}
+@media(max-width: 800px) { /* screen width < 800px 같은 뜻 */
+  #grid {
+    display: block;
+  }
+  ol {
+    border-right: none;
+  }
+  h1 {
+    border-bottom: none;
+  }
+}
